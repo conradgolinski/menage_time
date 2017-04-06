@@ -8,8 +8,7 @@ var Task = Backbone.Model.extend({
 		content:'',
 		date: '',
 		category:''
-	},
-	url: "https://conradgolinski.github.io/menage_time/"
+	}
 });
 
 var Tasks = Backbone.Collection.extend({});
@@ -35,8 +34,8 @@ var TaskView = Backbone.View.extend({
 // for all tasks
 
 var TasksView = Backbone.View.extend({
-	model: new Tasks(),
-	$el:$('div.view-collection'),
+	model:tasks,
+	el:$('div.view-collection'),
 	initialize:function(){
 		this.model.on('add',this.render,this);
 		this.model.on('change',function(){
@@ -58,7 +57,6 @@ var TasksView = Backbone.View.extend({
 		});
 	},
 	render:function(){
-
 		this.$el.html('');
 		_.each(this.model.toArray(),function(task){
 			this.$el.append((new TaskView({model: task})).render().$el);
