@@ -9,7 +9,7 @@ var Task = Backbone.Model.extend({
 		date: '',
 		category:''
 	},
-	url: "http://konradgolinski.pl/"
+	url: "https://conradgolinski.github.io/menage_time/"
 });
 
 var Tasks = Backbone.Collection.extend({});
