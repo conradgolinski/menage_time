@@ -81,7 +81,7 @@ $(document).ready(function(){
 		content:$('input.content').val('');
 		date:$('input.date').val('');
 		category:$('input.category').val('');
-		tasks.add(tasks);
+		tasks.add(task);
 
 		task.save(null, {
 			succes:function(res){
